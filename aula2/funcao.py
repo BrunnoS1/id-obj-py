@@ -2,8 +2,10 @@ import cv2
 import os
 
 def carregar_imagens_pasta(pasta):
-    ''' argumento = nome da pasta 
-    ex: 'img/' '''
+    ''' 
+    argumento = nome da pasta 
+    ex: carregar_imagens_pasta('img/')
+    '''
     imagens = []
     for nomearq in os.listdir(pasta):
         img = cv2.imread(os.path.join(pasta,nomearq))

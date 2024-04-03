@@ -10,11 +10,14 @@ cinza=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 # Criando um elemento para a dilatação
 elem=np.ones((3,3),np.uint8)
 
-# Implementando a dilatação
-dilatacao=cv2.dilate(cinza,elem,iterations=2)
-# erosao=cv2.erode(cinza,elem,iterations=2)
+escolha = int(input("Digite 1 para dilatacao 2 para erosao"))
 
-# Exibindo a imagem com o efeito da dilatação
-cv2.imshow("Imagem com dilatação",dilatacao)
-# cv2.imshow("Imagem com dilatação",erosao)
-cv2.waitKey()
+# Implementando a dilatação/erosao
+if escolha == 1:
+    img =cv2.dilate(cinza,elem,iterations=150)
+    cv2.imshow("Imagem com dilatação",img)
+    cv2.waitKey()
+elif escolha == 2:
+    erosao=cv2.erode(cinza,elem,iterations=2)
+    cv2.imshow("Imagem com erosao",img)
+    cv2.waitKey()
